@@ -98,7 +98,7 @@ def merge_data(shodan_data, censys_data):
             
             # Chuyển đổi mỗi service thành định dạng "port/service_name"
             merged_data[ip]['services'] = [
-                f"{service.get('port', '')}/{service.get('service_name', '')}"
+                f"{service.get('port', '')}/{service.get('service_name', 'UNKNOWN')}"
                 for service in merged_data[ip]['services']
             ]
     
@@ -117,7 +117,7 @@ def merge_data(shodan_data, censys_data):
         port = item.get('port')
         if port is not None:
             port_str = str(port)
-            port_service = f"{port_str}/{item.get('product', '')}"
+            port_service = f"{port_str}/{item.get('product', 'UNKNOWN')}"
             
             if 'services' not in merged_data[ip]:
                 merged_data[ip]['services'] = []
