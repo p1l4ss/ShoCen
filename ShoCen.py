@@ -12,7 +12,7 @@ CENSYS_API_SECRET = 'GK8d0MIq1AlhgVIqCZsE7h065NpAAgVx'
 def get_shodan_data(hostname):
     api = shodan.Shodan(SHODAN_API_KEY)
     try:
-        results = api.search(hostname)
+        results = api.search('hostname:'+hostname)
         if results['matches']:
             extracted_data = []
             for result in results['matches']:
