@@ -7,7 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 SHODAN_API_KEY = '3tj9ovMyEtTxhWOhTiEK4GcwNkVSj3B8'
 CENSYS_API_ID = '66b963d6-b582-4043-9d9e-974a03aba783'
-CENSYS_API_SECRET = 'GK8d0MIq1AlhgVIqCZsE7h065NpAAgVx'
+CENSYS_API_SECRET = 'BCK00BtK32KYS2vyYXG3higXFFW5EX3D'
 
 def get_shodan_data(hostname):
     api = shodan.Shodan(SHODAN_API_KEY)
